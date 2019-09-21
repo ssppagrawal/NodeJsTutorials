@@ -11,6 +11,8 @@ const partialsPath = path.join(__dirname , '../templates/partials')
 
 const app = express() // we createed our application
 
+const port = process.env.PORT || 3000
+
 app.set('view engine','hbs')
 app.set('views' , viewsPath )
 hbs.registerPartials(partialsPath)
@@ -115,6 +117,7 @@ app.get('*',(req , res) => {
     })
 })
 
-app.listen(3000 , () => {
-    console.log('The sever did started correctly on port 3000.')
+app.listen(port , () => {
+    console.log('The sever did started correctly on port '+port+'.')
 })
+
